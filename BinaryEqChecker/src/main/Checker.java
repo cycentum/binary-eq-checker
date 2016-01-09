@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Takuya KOUMURA.
- * http://cycentum.com/software/binaryeqchecker/
+ * http://www.cycentum.com/
  * 
  * This file is part of Binary Eq Checker.
  * 
@@ -28,6 +28,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URI;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -41,6 +42,11 @@ import javax.swing.JProgressBar;
 
 import net.miginfocom.swing.MigLayout;
 
+/**
+ * Main class.
+ * @author koumura
+ *
+ */
 public class Checker
 {
 	private JFrame mainFrame;
@@ -123,7 +129,7 @@ public class Checker
 		for(PathText fp: filePanel)
 		{
 			fp.updatePath();
-			if(fp.getPath()==null||!fp.getPath().toFile().exists())
+			if(fp.getPath()==null||!Files.exists(fp.getPath())||Files.isDirectory(fp.getPath()))
 			{
 				ok=false;
 				fp.red();
@@ -191,6 +197,11 @@ public class Checker
 		
 	}
 	
+	/**
+	 * Entry point.
+	 * Creates main class, Checker, and show the main frame.
+	 * @param arg
+	 */
 	public static void main(String... arg)
 	{
 		Checker checker=new Checker();

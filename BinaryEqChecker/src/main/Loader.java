@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Takuya KOUMURA.
- * http://cycentum.com/software/binaryeqchecker/
+ * http://www.cycentum.com/
  * 
  * This file is part of Binary Eq Checker.
  * 

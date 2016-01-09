@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Takuya KOUMURA.
- * http://cycentum.com/software/binaryeqchecker/
+ * http://www.cycentum.com/
  * 
  * This file is part of Binary Eq Checker.
  * 
@@ -21,7 +21,6 @@ package main;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -45,11 +44,12 @@ class PathText extends JTextArea
 		addMouseListener(new MouseList(this));
 	}
 	
-	void fileDropped(Path path)
+	void fileDropped(String path)
 	{
-		if(Files.isDirectory(path)) return;
-		setText(path.toAbsolutePath().toString());
-		this.path=path;
+//		if(Files.isDirectory(path)) return;
+//		setText(path.toAbsolutePath().toString());
+//		this.path=path;
+		setText(path);
 		setForeground(Color.black);
 		checker.fileDropped(index);
 	}
@@ -92,7 +92,7 @@ class PathText extends JTextArea
 				if(ch==JFileChooser.APPROVE_OPTION)
 				{
 					Path path=chooser.getSelectedFile().toPath();
-					pathText.fileDropped(path);
+					pathText.fileDropped(path.toAbsolutePath().toString());
 				}
 			}
 		}
