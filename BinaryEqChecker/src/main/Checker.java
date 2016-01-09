@@ -112,6 +112,10 @@ public class Checker
 		loader=new Loader(this, 1024*1024);
 	}
 	
+	/**
+	 * Resets foreground color and the progress bar.
+	 * @param index
+	 */
 	void fileDropped(int index)
 	{
 		eqLabel.setText("?");
@@ -179,6 +183,11 @@ public class Checker
 		eqLabel.setForeground(Color.black);
 	}
 	
+	/**
+	 * Action listener of the check button.
+	 * @author koumura
+	 *
+	 */
 	private static class ButtonList implements ActionListener
 	{
 		private Checker checker;
@@ -199,7 +208,7 @@ public class Checker
 	
 	/**
 	 * Entry point.
-	 * Creates main class, Checker, and show the main frame.
+	 * Creates main class and show the main frame.
 	 * @param arg
 	 */
 	public static void main(String... arg)

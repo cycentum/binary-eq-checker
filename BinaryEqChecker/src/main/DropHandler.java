@@ -31,7 +31,7 @@ import javax.swing.JComponent;
 import javax.swing.TransferHandler;
 
 /**
- * 
+ * Handler for file drop and copy & paste.
  * @author koumura
  *
  */
@@ -55,6 +55,9 @@ class DropHandler extends TransferHandler
 		return false;
 	}
 
+	/**
+	 * Handles drop and paste.
+	 */
 	@Override
 	public boolean importData(JComponent component, Transferable transferable)
 	{
@@ -93,6 +96,9 @@ class DropHandler extends TransferHandler
 		return false;
 	}
 	
+	/**
+	 * Handles copy and cut.
+	 */
 	@Override
 	public void exportToClipboard(JComponent comp, Clipboard clip, int action)
 	{

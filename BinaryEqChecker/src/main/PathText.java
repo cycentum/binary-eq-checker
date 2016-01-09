@@ -27,6 +27,11 @@ import java.nio.file.Paths;
 import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 
+/**
+ * Text area.
+ * @author koumura
+ *
+ */
 class PathText extends JTextArea
 {
 	private Path path;
@@ -44,6 +49,10 @@ class PathText extends JTextArea
 		addMouseListener(new MouseList(this));
 	}
 	
+	/**
+	 * Sets text to the path.
+	 * @param path
+	 */
 	void fileDropped(String path)
 	{
 //		if(Files.isDirectory(path)) return;
@@ -54,6 +63,9 @@ class PathText extends JTextArea
 		checker.fileDropped(index);
 	}
 
+	/**
+	 * Converts text to a path.
+	 */
 	void updatePath()
 	{
 		path=Paths.get(getText());
@@ -63,11 +75,19 @@ class PathText extends JTextArea
 		return path;
 	}
 	
+	/**
+	 * Sets forefround color to red.
+	 */
 	void red()
 	{
 		setForeground(Color.red);
 	}
 	
+	/**
+	 * Detects double click and open a file chooser.
+	 * @author koumura
+	 *
+	 */
 	private static class MouseList extends MouseAdapter
 	{
 		private PathText pathText;

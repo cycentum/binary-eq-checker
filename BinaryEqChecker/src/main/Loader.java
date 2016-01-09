@@ -25,6 +25,11 @@ import java.nio.file.Path;
 
 import javax.swing.SwingUtilities;
 
+/**
+ * Binary data loader.
+ * @author koumura
+ *
+ */
 public class Loader
 {
 	private Checker checker;
@@ -73,6 +78,11 @@ public class Loader
 		return incomplete;
 	}
 
+	/**
+	 * Data is loaded in another thread for asynchronous loading.
+	 * @author koumura
+	 *
+	 */
 	private static class Run implements Runnable
 	{
 		private Loader loader;
