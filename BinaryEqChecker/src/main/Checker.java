@@ -28,9 +28,8 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 
 import javax.imageio.ImageIO;
@@ -214,12 +213,10 @@ public class Checker
 	public static void main(String... arg)
 	{
 		Checker checker=new Checker();
-		
-//		Path path=Paths.get("./res/favicon.ico");
-		Path path=Paths.get("./res/iconAlpha.png");
 		try
 		{
-			BufferedImage image=ImageIO.read(path.toFile());
+			URL url=Checker.class.getResource("/iconAlpha.png");
+			BufferedImage image=ImageIO.read(url);
 			checker.mainFrame.setIconImage(image);
 		}
 		catch(IOException e){}
