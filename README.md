@@ -1,8 +1,8 @@
-##Binary Eq Checker
+# Binary Eq Checker
 The stand alone software can be downloaded at http://www.cycentum.com/software/binary-eq-checker/.
 
-##License
+## License
 Binary Eq Checker is licensed under the Apache License, Version 2.0. 
 
--
+---
 Copyright &copy; 2016 Takuya KOUMURA
